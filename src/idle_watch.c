@@ -72,10 +72,11 @@ static void handle_resumed(void* data __attribute_maybe_unused__,
     print_with_timestamp(resume_str);
 }
 
-static const struct ext_idle_notification_v1_listener idle_notification_listener = {
-    .idled = handle_idled,
-    .resumed = handle_resumed,
-};
+static const struct ext_idle_notification_v1_listener idle_notification_listener
+    = {
+          .idled = handle_idled,
+          .resumed = handle_resumed,
+      };
 
 static void global_registry_handler(void* data __attribute_maybe_unused__,
     struct wl_registry* reg, uint32_t name, const char* interface,
@@ -90,8 +91,7 @@ static void global_registry_handler(void* data __attribute_maybe_unused__,
 }
 
 static const struct wl_registry_listener registry_listener
-        = { .global = global_registry_handler,
-              .global_remove = NULL };
+    = { .global = global_registry_handler, .global_remove = NULL };
 
 int main(int argc, char** argv)
 {
@@ -172,7 +172,8 @@ int main(int argc, char** argv)
         print_with_timestamp(initial_output);
     }
 
-    while (wl_display_dispatch(display));
+    while (wl_display_dispatch(display))
+        ;
 
 cleanup:
     cleanup();
