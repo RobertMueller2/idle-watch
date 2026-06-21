@@ -1,3 +1,7 @@
+# Deprecated
+
+ironbar has got its own [idle inhibit module](https://github.com/JakeStanger/ironbar/wiki/inhibit) in the meantime, which makes this tool obsolete. The repostory remains in archive mode for reference purposes.
+
 # 💤 `idle-watch` — Wayland Idle State Notifier
 
 This is a small C program that uses the [`ext_idle_notifier_v1`](https://wayland.app/protocols/ext-idle-notify-unstable-v1) Wayland protocol to detect when the user's seat becomes idle or active again. It prints customizable messages on these events, optionally timestamped.
